@@ -58,11 +58,11 @@ h3 {
 }
 
 .btn:hover {
-    background-color: #00d4ff;
+    background-color: #00d4ff; /* Change la couleur de fond en bleu clair */
+    color: #ffffff; /* Garde la couleur du texte en blanc au survol pour contraste */
     transform: scale(1.05);
     box-shadow: 0px 4px 20px rgba(0, 212, 255, 0.6);
 }
-
 /* Skill bars */
 .skill-bar {
     background-color: #333;

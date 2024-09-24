@@ -1,0 +1,245 @@
+/* Global styling */
+body {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headers and titles */
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #00d4ff;
+}
+
+h3 {
+    font-size: 1.6rem;
+    color: #00ff99; /* Un vert néon pour un style tech */
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px; /* Ajout de padding pour respirer */
+    background-color: #282c34;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile Photo */
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px; /* Augmente cet espace pour éloigner les boutons de la section précédente */
+}
+
+.btn {
+    background-color: #ff69b4;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+.btn:hover {
+    background-color: #00d4ff;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 20px rgba(0, 212, 255, 0.6);
+}
+
+/* Skill bars */
+.skill-bar {
+    background-color: #333;
+    border-radius: 5px;
+    height: 10px;
+    width: 100%;
+    margin-bottom: 15px; /* Espace entre les barres */
+    position: relative; /* Nécessaire pour l'animation */
+}
+
+.skill-level {
+    height: 100%;
+    background: linear-gradient(90deg, #00d4ff, #005f80);
+    border-radius: 5px;
+    position: relative;
+    width: var(--width); /* Utilisation de la variable CSS pour la largeur définie dans le HTML */
+}
+
+.skill-level::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: move 2s infinite linear;
+}
+
+@keyframes move {
+    from { left: 0; }
+    to { left: calc(var(--width) - 10px); } /* L'animation s'arrête à la largeur définie */
+}
+
+/* Icon and hover effects */
+.skill-info i {
+    color: #00d4ff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-info i:hover {
+    transform: scale(1.2);
+    color: #ff69b4; /* Rose néon au survol */
+}
+
+/* Box styling */
+.box {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    background-color: #2b2b2b; /* Couleur de fond un peu plus claire */
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header content styling */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px; /* Espace plus grand entre l'en-tête et le reste */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    margin-bottom: 100px; /* Espace supplémentaire pour éviter que le footer ne chevauche les éléments */
+}
+
+footer {
+    background-color: #2b2b2b;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #444;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center; /* Centre les liens */
+}
+
+.footer-links a {
+    color: #ff69b4; /* Utilise le même rose que le bouton retour pour l'harmonie */
+    text-decoration: none;
+    margin: 0 20px; /* Ajoute plus d'espace entre les liens */
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00d4ff; /* Change de couleur au survol */
+}
+
+.footer-links i {
+    margin-right: 5px;
+}
+
+
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #ff69b4;
+    color: white;
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: none; /* Cacher le bouton au début */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+.back-to-top:hover {
+    background-color: #00d4ff;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 20px rgba(0, 212, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px; /* Positionne plus haut pour les petits écrans */
+        right: 20px;  /* Réduit la marge sur le côté */
+        font-size: 18px; /* Réduit la taille pour éviter qu'il ne soit trop grand */
+        padding: 8px 10px; /* Ajuste la taille du bouton */
+    }
+}
+
+
+a {
+    color: #ff69b4; /* Utilise le rose pour les liens */
+    text-decoration: none; /* Supprime le soulignement */
+    transition: color 0.3s ease; /* Transition douce pour les changements de couleur */
+}
+
+a:hover {
+    color: #00d4ff; /* Change la couleur en bleu clair au survol */
+}
